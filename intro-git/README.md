@@ -12,7 +12,7 @@
 - <strong>git log --oneline</strong> (visualizar commits y ramas del proyecto)
 - <string>git branch nombre-rama</strong> (crear nueva rama)
 - <string>git checkout nombre-rama</strong> (cambiar de rama)
-- <string></strong>
+- <string>git merge nombre-rama</strong> (unir commits de dos ramas)
 
 # Config
 
