@@ -1,0 +1,26 @@
+#titulo-princpal {
+	text-align: center;
+}
+.subtitulo {
+	text-align: center;
+	color: #52e707;
+}
+/*
+Esto es un comentario
+*/
+#contenedor-imagen {
+	margin: 50px;
+	padding-left: 40%;
+}
+nav {
+	text-align: center;
+}
+
+nav a {
+	/*Quitar subrayado*/
+	text-decoration: none;
+	color: rgb(40, 91, 40);
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
