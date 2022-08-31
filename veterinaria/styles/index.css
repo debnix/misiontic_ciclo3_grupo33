@@ -1,0 +1,40 @@
+#section-img-home {
+	/*border: 1px solid red;*/
+	display: flex;
+	justify-content: center;
+	margin-bottom: 80px;
+}
+
+#section-table {
+	padding: 40px;
+}
+
+/*Estilo para la tabla */
+#section-table table {
+	width: 100%;
+	text-align: center;
+}
+#table,
+tr,
+td,
+th {
+	border: 1px solid black;
+}
+
+#section-img-home {
+	height: 20vw;
+}
+#section-img-home img {
+	animation: mover 2s infinite;
+}
+@keyframes mover {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(80px);
+	}
+	80% {
+		transform: translateX(50px);
+	}
+}
