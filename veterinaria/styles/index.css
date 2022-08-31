@@ -21,9 +21,6 @@ th {
 	border: 1px solid black;
 }
 
-#section-img-home {
-	height: 20vw;
-}
 #section-img-home img {
 	animation: mover 2s infinite;
 }
