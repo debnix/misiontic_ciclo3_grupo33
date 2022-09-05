@@ -1,0 +1,21 @@
+.card {
+	border: 1px solid black;
+	width: 400px;
+	height: 180px;
+	border-radius: 10px;
+	overflow: hidden;
+	display: flex;
+}
+
+.card img {
+	width: 45%;
+	height: 100%;
+}
+
+.body-card {
+	width: 55%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
