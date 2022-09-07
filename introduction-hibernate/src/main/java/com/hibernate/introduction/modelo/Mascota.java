@@ -1,9 +1,19 @@
 package com.hibernate.introduction.modelo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+// Indicar que la clase Mascota representa una entidad en la BD
+@Entity
+// Indicar el nombre de la tabla en BD a la que representa la clase Mascota
+@Table(name = "mascotas")
 public class Mascota {
 
   // ATRIBUTOS
+  @Id // Indica primary key
   private int id;
+  // @Column(name="nombre")
   private String nombre;
   private String apellido;
   private String raza;
