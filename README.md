@@ -10,3 +10,6 @@ Introduction to web development with Java and Spring Boot, Html, Css, Js
 - Introduction to git
 - Introduction to Html and Css
 - Introduction to Java Script
+- - rick-and-morty-api-fetch
+- Introduction to Hibernate
+- Introduction to Mysql
