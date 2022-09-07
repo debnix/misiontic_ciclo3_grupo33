@@ -33,6 +33,18 @@ public class Mascota {
     this.observacion = observacion;
   }
 
+  @Override
+  public String toString() {
+    String info = "----------------------\n";
+    info += "Nombre: " + nombre;
+    info += "\nApellido: " + apellido;
+    info += "\nRaza: " + raza;
+    info += "\nFoto: " + foto;
+    info += "\nObservación: " + observacion;
+    info += "\n----------------------\n";
+    return info;
+  }
+
   // CONSULTORES // GETTERS
   public int getId() {
     return id;
