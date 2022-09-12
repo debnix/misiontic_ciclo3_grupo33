@@ -39,8 +39,10 @@ public class App {
             Mascota mascota = session.byId(Mascota.class).load(3);
             System.out.println(mascota);
             // Eliminar
-            session.remove(mascota);
-            session.getTransaction().commit();
+            /*
+             * session.remove(mascota);
+             * session.getTransaction().commit();
+             */
 
             /*
              * Mascota mascota = session.find(Mascota.class, 3);
@@ -55,15 +57,13 @@ public class App {
              * session.merge(mascota);
              * session.getTransaction().commit();
              */
+            // session.createMutationQuery("from mascotas").executeUpdate()
 
-            /*
-             * List<Mascota> mascotas = session.createQuery("from mascotas",
-             * Mascota.class).list();
-             * 
-             * for (int i = 0; i < mascotas.size(); i++) {
-             * System.out.println(mascotas.get(i));
-             * }
-             */
+            List<Mascota> mascotas = session.createQuery("from Mascota", Mascota.class).list();
+
+            for (int i = 0; i < mascotas.size(); i++) {
+                System.out.println(mascotas.get(i));
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
