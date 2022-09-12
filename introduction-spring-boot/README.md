@@ -1,6 +1,6 @@
-# Introduction to Hibernate
+# Introduction to Sprint Boot
 
-- new directory 'resources' and add file 'cfg.xml' into src/main
+- https://spring.io/guides/gs/spring-boot/
 
 ### Maven repository
 
@@ -10,3 +10,4 @@
 
 - Mysql
 - Hibernate
+- Sprint boot stater web
