@@ -66,6 +66,7 @@ public class MascotaService {
       if (list.size() > 0) {
         mascota = list.get(0);
       }
+      session.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
