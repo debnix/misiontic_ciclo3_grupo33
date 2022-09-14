@@ -99,4 +99,35 @@ public class MascotaService {
     return resp;
   }
 
+  public String update(Mascota mascota) {
+    String message = "";
+    Session session = openSession();
+    try {
+      session.merge(mascota);
+      session.getTransaction().commit();
+      message = "Mascota actualizada con exito";
+    } catch (Exception e) {
+      e.printStackTrace();
+      message = e.getMessage();
+    }
+    session.close();
+    return message;
+  }
+
+  public String delete(int id) {
+    String message = "";
+    Session session = openSession();
+    try {
+      Mascota mascota = getMascotaXId(id);
+      session.remove(mascota);
+      session.getTransaction().commit();
+      message = "Mascota eliminada con éxito";
+    } catch (Exception e) {
+      e.printStackTrace();
+      message = e.getMessage();
+    }
+    session.close();
+    return message;
+  }
+
 }
