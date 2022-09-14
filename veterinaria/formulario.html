@@ -31,25 +31,33 @@
 	<body>
 		<section id="section-form">
 			<!--Formulario-->
-			<form>
+			<form onsubmit="get_data_form(event)">
 				<!---Nombre---->
 				<label for="nombre">Nombre:</label>
 				<input type="text" name="nombre" />
+				<br />
 				<!---Apellido---->
 				<label for="apellido">Apellido:</label>
 				<input type="text" name="apellido" />
+				<br />
 				<!---Raza---->
 				<label for="raza">Raza:</label>
 				<input type="text" name="raza" />
+				<br />
 				<!---Foto---->
 				<label for="foto">Foto:</label>
 				<input type="text" name="foto" />
+				<br />
 				<!---Observacion---->
 				<label for="observacion">Observación:</label>
 				<textarea name="observacion"></textarea>
+				<br />
 				<!---Botón de guardar---->
 				<button type="submit">Registrar</button>
 			</form>
 		</section>
+
+		<!---Cargar Scripts---->
+		<script src="scripts/formulario.js"></script>
 	</body>
 </html>
