@@ -50,6 +50,11 @@ public class MascotaController {
     return service.getNombreApellido(nombre, apellido);
   }
 
+  @GetMapping("/id/{id}")
+  public Mascota getMascotaXId(@PathVariable(name = "id") int id) {
+    return service.getMascotaXId(id);
+  }
+
   @PostMapping
   public String create(@RequestBody Mascota mascota) {
     return service.create(mascota);

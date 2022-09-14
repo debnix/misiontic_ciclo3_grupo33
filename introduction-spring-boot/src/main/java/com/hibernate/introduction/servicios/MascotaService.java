@@ -54,6 +54,17 @@ public class MascotaService {
     return mascotas;
   }
 
+  public Mascota getMascotaXId(int id) {
+    Mascota mascota = new Mascota();
+    Session session = openSession();
+    try {
+      mascota = session.find(Mascota.class, id);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return mascota;
+  }
+
   public Mascota getNombreApellido(String nombre, String apellido) {
     Mascota mascota = new Mascota();
     Session session = openSession();
@@ -66,10 +77,10 @@ public class MascotaService {
       if (list.size() > 0) {
         mascota = list.get(0);
       }
-      session.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
+    session.close();
     return mascota;
   }
 
