@@ -46,8 +46,8 @@ public class MascotaController {
   }
 
   @GetMapping("/commons")
-  public String getNombreApellidoComun(@RequestParam String nombre, @RequestParam String apellido) {
-    return service.getNombreApellidoComun(nombre, apellido);
+  public String getNombreApellido(@RequestParam String nombre, @RequestParam String apellido) {
+    return service.getNombreApellido(nombre, apellido);
   }
 
   @PostMapping

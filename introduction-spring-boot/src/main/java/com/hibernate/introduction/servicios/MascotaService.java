@@ -54,8 +54,22 @@ public class MascotaService {
     return mascotas;
   }
 
-  public String getNombreApellidoComun(String nombre, String apellido) {
-    return "Nombre: " + nombre + " - Apellido: " + apellido;
+  public Mascota getNombreApellido(String nombre, String apellido) {
+    Mascota mascota = new Mascota();
+    Session session = openSession();
+    try {
+      List<Mascota> list = session
+          .createQuery("from Mascota where nombre = :nombre and apellido = :apellido", Mascota.class)
+          .setParameter("nombre", nombre)
+          .setParameter("apellido", apellido)
+          .list();
+      if (list.size() > 0) {
+        mascota = list.get(0);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return mascota;
   }
 
   public String create(Mascota mascota) {
