@@ -24,6 +24,11 @@ th {
 #section-img-home img {
 	animation: mover 2s infinite;
 }
+
+#table tbody tr img {
+	width: 100px;
+}
+
 @keyframes mover {
 	0% {
 		transform: translateY(0);

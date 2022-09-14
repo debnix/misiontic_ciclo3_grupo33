@@ -21,7 +21,10 @@ function listar_mascotas (mascotas) {
                 <td>${m.apellido}</td>
                 <td>${m.raza}</td>
                 <td>${m.observacion}</td>
-                <td></td>
+                <td>
+                  <button class="btn btn-warning">Actualizar</button>
+                  <button class="btn btn-danger">Eliminar</button>
+                </td>
               </tr>`
   }
   tbody += "</tbody>"
