@@ -22,13 +22,17 @@ function listar_mascotas (mascotas) {
                 <td>${m.raza}</td>
                 <td>${m.observacion}</td>
                 <td>
-                  <button class="btn btn-warning">Actualizar</button>
+                  <button class="btn btn-warning" onclick='update(${JSON.stringify(m)})'>Actualizar</button>
                   <button class="btn btn-danger">Eliminar</button>
                 </td>
               </tr>`
   }
   tbody += "</tbody>"
   table.innerHTML += tbody
+}
+
+function update (mascota) {
+  window.location.href = `formulario.html?mascota=${JSON.stringify(mascota)}`
 }
 
 async function main () {

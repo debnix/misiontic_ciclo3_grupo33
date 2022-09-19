@@ -1,5 +1,10 @@
 const URL_API = "http://localhost:8080/mascotas"
 
+const UPDATE_FLAG = {
+  update: false,
+  id: null
+}
+
 function get_data_form (evt) {
   // Indicar que no recarge página al enviar el formulario
   evt.preventDefault()
@@ -11,7 +16,23 @@ function get_data_form (evt) {
     foto: form.foto.value,
     observacion: form.observacion.value
   }
-  create(mascota)
+  console.table({ mascota })
+  if (UPDATE_FLAG.update) {
+    mascota.id = UPDATE_FLAG.id
+    // update()
+  } else {
+    create(mascota)
+  }
+
+  clear(form)
+}
+
+function clear (form) {
+  form.nombre.value = ""
+  form.apellido.value = ""
+  form.raza.value = ""
+  form.foto.value = ""
+  form.observacion.value = ""
 }
 
 
@@ -27,3 +48,24 @@ async function create (mascota) {
   const text = await resp.text()
   alert(text)
 }
+
+function get_params_url () {
+  const params = window.location.search
+  if (params) {
+    const url = new URLSearchParams(params)
+    const mascota = JSON.parse(url.get("mascota"))
+    set_value_form(mascota)
+    document.getElementById("btn-registrar").innerText = "Actualizar"
+  }
+
+}
+
+function set_value_form (mascota) {
+  document.getElementById("nombre").setAttribute("value", mascota.nombre)
+  document.getElementById("apellido").setAttribute("value", mascota.apellido)
+  document.getElementById("raza").setAttribute("value", mascota.raza)
+  document.getElementById("foto").setAttribute("value", mascota.foto)
+  document.getElementById("observacion").innerText = mascota.observacion
+}
+
+get_params_url()
