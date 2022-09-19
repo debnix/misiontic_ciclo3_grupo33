@@ -1,0 +1,8 @@
+.container {
+	margin: 100px;
+}
+
+#cont-btn {
+	display: flex;
+	justify-content: center;
+}
