@@ -60,11 +60,13 @@ public class MascotaController {
   }
 
   @PutMapping
+  @CrossOrigin("*") // Habilitar las conexiones de origen cruzado
   public String update(@RequestBody Mascota mascota) {
     return service.update(mascota);
   }
 
   @DeleteMapping("/{id}")
+  @CrossOrigin("*")
   public String delete(@PathVariable(name = "id") int id) {
     return service.delete(id);
   }
