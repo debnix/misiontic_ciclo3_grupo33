@@ -51,6 +51,23 @@ function update (mascota) {
   window.location.href = `formulario.html?mascota=${JSON.stringify(mascota)}`
 }
 
+
+function submit_search (evt) {
+  evt.preventDefault()
+  const nombre = evt.target.nombre_mascota.value
+  console.log(nombre)
+  search(nombre)
+
+}
+
+async function search (nombre) {
+  // enviar petición
+  const resp = await fetch(`${URL_API}/commons?nombre=${nombre}`)
+  const mascota = await resp.json()
+  listar_mascotas([mascota])
+}
+
+
 async function main () {
   const mascotas = await get_mascotas(URL_API)
   listar_mascotas(mascotas)
