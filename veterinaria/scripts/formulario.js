@@ -18,8 +18,9 @@ function get_data_form (evt) {
   }
   console.table({ mascota })
   if (UPDATE_FLAG.update) {
+    // añade el id al objeto mascota
     mascota.id = UPDATE_FLAG.id
-    // update()
+    update(mascota)
   } else {
     create(mascota)
   }
@@ -33,6 +34,20 @@ function clear (form) {
   form.raza.value = ""
   form.foto.value = ""
   form.observacion.value = ""
+}
+
+async function update (mascota) {
+  // Enviar petición
+  const resp = await fetch(URL_API, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(mascota)
+  })
+  const text = await resp.text()
+  alert(text)
+  window.location.href = "index.html"
 }
 
 
@@ -56,6 +71,8 @@ function get_params_url () {
     const mascota = JSON.parse(url.get("mascota"))
     set_value_form(mascota)
     document.getElementById("btn-registrar").innerText = "Actualizar"
+    UPDATE_FLAG.update = true
+    UPDATE_FLAG.id = mascota.id
   }
 
 }
