@@ -45,8 +45,9 @@ public class MascotaController {
   }
 
   @GetMapping("/commons")
-  public Mascota getNombreApellido(@RequestParam String nombre, @RequestParam String apellido) {
-    return service.getNombreApellido(nombre, apellido);
+  @CrossOrigin("*")
+  public Mascota getNombreApellido(@RequestParam String nombre) {
+    return service.getNombreApellido(nombre);
   }
 
   @GetMapping("/id/{id}")
