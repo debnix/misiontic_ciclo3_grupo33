@@ -73,6 +73,7 @@ function get_params_url () {
     document.getElementById("btn-registrar").innerText = "Actualizar"
     UPDATE_FLAG.update = true
     UPDATE_FLAG.id = mascota.id
+    document.getElementById("href-registrar").innerText = "Actualizar mascota"
   }
 
 }

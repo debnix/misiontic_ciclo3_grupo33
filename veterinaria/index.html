@@ -80,10 +80,53 @@
 						</tr>
 					</thead>
 					<!--Cuerpo-->
+					<tbody id="tbody"></tbody>
 					<!--Pie-->
 					<tfoot></tfoot>
 				</table>
 			</section>
+
+			<!-- Modal -->
+			<div
+				class="modal fade"
+				id="exampleModal"
+				tabindex="-1"
+				aria-labelledby="exampleModalLabel"
+				aria-hidden="true"
+			>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+							<button
+								type="button"
+								class="btn-close"
+								data-bs-dismiss="modal"
+								aria-label="Close"
+							></button>
+						</div>
+						<div class="modal-body">
+							¿Desea eliminar a <span id="mascota-eliminar"></span> ?
+						</div>
+						<div class="modal-footer">
+							<button
+								type="button"
+								class="btn btn-secondary"
+								data-bs-dismiss="modal"
+							>
+								No
+							</button>
+							<button
+								type="button"
+								class="btn btn-danger"
+								data-bs-dismiss="modal"
+							>
+								Sí, deseo eliminar
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 		<!--Pie de página-->
 		<footer></footer>

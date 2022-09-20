@@ -1,3 +1,4 @@
+const URL_API = "http://localhost:8080/mascotas";
 
 async function get_mascotas (url) {
   // Enviar petición
@@ -8,8 +9,8 @@ async function get_mascotas (url) {
 
 function listar_mascotas (mascotas) {
   // Referenciar tabla
-  const table = document.getElementById("table")
-  let tbody = "<tbody>"
+  const table = document.getElementById("tbody")
+  let tbody = ""
   // Iterar mascotas
   for (let i = 0; i < mascotas.length; i++) {
     const m = mascotas[i]
@@ -23,12 +24,21 @@ function listar_mascotas (mascotas) {
                 <td>${m.observacion}</td>
                 <td>
                   <button class="btn btn-warning" onclick='update(${JSON.stringify(m)})'>Actualizar</button>
-                  <button class="btn btn-danger">Eliminar</button>
+                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Eliminar</button>
                 </td>
               </tr>`
   }
-  tbody += "</tbody>"
-  table.innerHTML += tbody
+  table.innerHTML = tbody
+}
+
+async function delete_pet (id) {
+  // enviar petición
+  const resp = await fetch(`${URL_API}/${id}`, {
+    method: 'DELETE'
+  })
+  const text = await resp.text()
+  alert(text)
+  main()
 }
 
 function update (mascota) {
@@ -36,8 +46,7 @@ function update (mascota) {
 }
 
 async function main () {
-  const url = "http://localhost:8080/mascotas";
-  const mascotas = await get_mascotas(url)
+  const mascotas = await get_mascotas(URL_API)
   listar_mascotas(mascotas)
 }
 
