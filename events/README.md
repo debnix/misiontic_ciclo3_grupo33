@@ -1,0 +1,2 @@
+- Tripulantes, mañana tenemos un evento importante donde podrán conocer el proceso de postulación a becas internacionales y tendremos un invitado especial.
+- - https://imaster-co.zoom.us/j/83637497042?pwd=V2tqUldSTFZJNkZXS3RWY09uSlpZdz09

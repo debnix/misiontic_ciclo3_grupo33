@@ -60,6 +60,10 @@ function submit_search (evt) {
 
 }
 
+function change (evt) {
+  console.log(evt)
+}
+
 async function search (nombre) {
   // enviar petición
   const resp = await fetch(`${URL_API}/commons?nombre=${nombre}`)
